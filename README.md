@@ -36,7 +36,7 @@ powershell -File scripts\build_pin.ps1 -Pin %PIN% -Prefix %CD%\prefix\%PIN%
 - `prefix/<pin>/bin/abseil_dll.dll`
 - `prefix/<pin>/lib/cmake/absl/abslConfig.cmake`（`find_package(absl CONFIG)`）
 
-## 消费方（阶段 1）
+## 消费方
 
 ### MultiProcessShell
 

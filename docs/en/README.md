@@ -35,7 +35,7 @@ Outputs:
 - `prefix/<pin>/bin/abseil_dll.dll`
 - `prefix/<pin>/lib/cmake/absl/abslConfig.cmake` (`find_package(absl CONFIG)`)
 
-## Consumers (stage 1)
+## Consumers
 
 ### MultiProcessShell
 
