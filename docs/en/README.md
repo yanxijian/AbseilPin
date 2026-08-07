@@ -2,7 +2,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../LICENSE)
 
-Pin repo that builds **one** shared Windows `abseil_dll.dll` so MultiProcessShell (protobuf) and pdfium_all / Volition can align ABI.
+Pin repo that builds **one** shared Windows `abseil_dll.dll` so [MultiProcessShell](https://github.com/yanxijian/MultiProcessShell) (protobuf) and [pdfium_all](https://github.com/yanxijian/pdfium_all) / [Volition](https://github.com/yanxijian/Volition) can align ABI.
 
 > Not a product library. The only `interface` is: **fixed LTS tag → install prefix usable with `find_package(absl)`**.
 
@@ -17,7 +17,7 @@ MPS and pdfium historically pinned different LTS tags; this repo owns the chosen
 
 | Pin ID | Abseil LTS | Matches | Status |
 |--------|------------|---------|--------|
-| **`20260107.1`** (default) | [20260107.1](https://github.com/abseil/abseil-cpp/releases/tag/20260107.1) | pdfium_all `deps.lock`; MPS `protobuf` **v35.1** via pin | **Buildable; MPS can consume via package** |
+| **`20260107.1`** (default) | [20260107.1](https://github.com/abseil/abseil-cpp/releases/tag/20260107.1) | [pdfium_all](https://github.com/yanxijian/pdfium_all) `deps.lock`; MPS `protobuf` **v35.1** via pin | **Buildable; MPS can consume via package** |
 | **`20240116.0`** | [20240116.0](https://github.com/abseil/abseil-cpp/releases/tag/20240116.0) | protobuf v29.3 companion | Rollback only |
 
 Details: [PIN_MATRIX.md](PIN_MATRIX.md) · Roadmap: [ROADMAP.md](ROADMAP.md)
@@ -37,7 +37,7 @@ Outputs:
 
 ## Consumers
 
-### MultiProcessShell
+### [MultiProcessShell](https://github.com/yanxijian/MultiProcessShell)
 
 ```bat
 cmake -S . -B build-shared -G Ninja ^
@@ -47,9 +47,9 @@ cmake -S . -B build-shared -G Ninja ^
 
 When `MPS_ABSEIL_PIN_PREFIX` is set (or the sibling prefix is auto-detected), protobuf uses `find_package(absl)` and does not FetchContent a second `abseil_dll`.
 
-### pdfium_all / Volition
+### [pdfium_all](https://github.com/yanxijian/pdfium_all) / [Volition](https://github.com/yanxijian/Volition)
 
-See [ROADMAP.md](ROADMAP.md). Until STL ABI matches (typically pdfium without V8), Volition keeps the **`volition_pdf_render`** out-of-process path.
+See [ROADMAP.md](ROADMAP.md). Until STL ABI matches (typically pdfium without V8), [Volition](https://github.com/yanxijian/Volition) keeps the **`volition_pdf_render`** out-of-process path.
 
 ## Documentation
 

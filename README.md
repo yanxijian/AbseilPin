@@ -2,7 +2,7 @@
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-共享 **一份** Windows `abseil_dll.dll` 的 pin 仓：给 MultiProcessShell（protobuf）与 pdfium_all / Volition 对齐 ABI。
+共享 **一份** Windows `abseil_dll.dll` 的 pin 仓：给 [MultiProcessShell](https://github.com/yanxijian/MultiProcessShell)（protobuf）与 [pdfium_all](https://github.com/yanxijian/pdfium_all) / [Volition](https://github.com/yanxijian/Volition) 对齐 ABI。
 
 > 不是业务库。`interface` 只有：**固定 LTS tag → 编出可 `find_package(absl)` 的 prefix**。
 
@@ -17,7 +17,7 @@ MPS 与 pdfium 曾钉不同 LTS，本仓负责钉住「要用的那一份」并�
 
 | Pin ID | Abseil LTS | 匹配谁 | 状态 |
 |--------|------------|--------|------|
-| **`20260107.1`**（默认） | [20260107.1](https://github.com/abseil/abseil-cpp/releases/tag/20260107.1) | pdfium_all `deps.lock`；MPS `protobuf` **v35.1**（经 pin） | **可编、可给 MPS `package` 消费** |
+| **`20260107.1`**（默认） | [20260107.1](https://github.com/abseil/abseil-cpp/releases/tag/20260107.1) | [pdfium_all](https://github.com/yanxijian/pdfium_all) `deps.lock`；MPS `protobuf` **v35.1**（经 pin） | **可编、可给 MPS `package` 消费** |
 | **`20240116.0`** | [20240116.0](https://github.com/abseil/abseil-cpp/releases/tag/20240116.0) | 旧 MPS `protobuf` v29.3 | 仅回退 |
 
 详情：[docs/zh/PIN_MATRIX.md](docs/zh/PIN_MATRIX.md) · 路线：[docs/zh/ROADMAP.md](docs/zh/ROADMAP.md)  
@@ -38,7 +38,7 @@ powershell -File scripts\build_pin.ps1 -Pin %PIN% -Prefix %CD%\prefix\%PIN%
 
 ## 消费方
 
-### MultiProcessShell
+### [MultiProcessShell](https://github.com/yanxijian/MultiProcessShell)
 
 ```bat
 cmake -S . -B build-shared -G Ninja ^
@@ -48,9 +48,9 @@ cmake -S . -B build-shared -G Ninja ^
 
 `MPS_ABSEIL_PIN_PREFIX` 非空（或旁路 prefix 被自动探测）时：protobuf `find_package(absl)`，不再 FetchContent 第二份 `abseil_dll`。
 
-### pdfium_all / Volition
+### [pdfium_all](https://github.com/yanxijian/pdfium_all) / [Volition](https://github.com/yanxijian/Volition)
 
-见 ROADMAP：在 STL ABI 对齐（通常 pdfium **关 V8**）之前，Volition 继续用 **旁路 `volition_pdf_render`**。
+见 ROADMAP：在 STL ABI 对齐（通常 pdfium **关 V8**）之前，[Volition](https://github.com/yanxijian/Volition) 继续用 **旁路 `volition_pdf_render`**。
 
 ## 布局
 
