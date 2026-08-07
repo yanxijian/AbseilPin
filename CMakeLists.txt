@@ -8,8 +8,12 @@ cmake_minimum_required(VERSION 3.16)
 
 project(AbseilPin LANGUAGES CXX VERSION 0.1.0)
 
-set(ABSL_PIN_ID "20240116.0" CACHE STRING "Pin id under pins/ (abseil-cpp git tag)")
-set_property(CACHE ABSL_PIN_ID PROPERTY STRINGS "20240116.0" "20260107.1")
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(ABSL_PIN_ID "20260107.1" CACHE STRING "Pin id under pins/ (abseil-cpp git tag)")
+set_property(CACHE ABSL_PIN_ID PROPERTY STRINGS "20260107.1" "20240116.0")
 
 include(FetchContent)
 

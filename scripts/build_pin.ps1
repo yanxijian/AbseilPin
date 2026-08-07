@@ -20,6 +20,7 @@ $cmakeArgs = @(
   "-B", $BuildDir,
   "-G", "Ninja",
   "-DCMAKE_BUILD_TYPE=Release",
+  "-DCMAKE_CXX_STANDARD=17",
   "-DABSL_PIN_ID=$Pin",
   "-DCMAKE_INSTALL_PREFIX=$Prefix"
 )
