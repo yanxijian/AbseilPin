@@ -8,13 +8,13 @@
 | pdfium_all | `deps.lock.md` → `thirdparty/abseil-cpp` / vcpkg `abseil` | **`20260107.1`** |
 | AbseilPin | `pins/20260107.1` | **`20260107.1`** (unification target / default sibling auto-detect) |
 
-Historical note: `protobuf` **v29.3** shipped **`20240116.0`** (pin kept for rollback only).
+Also pinned: **`20240116.0`** (ships with `protobuf` v29.3; rollback).
 
 ## Pins in this repo
 
 | ID | Upstream tag | Role |
 |----|--------------|------|
-| `20240116.0` | `20240116.0` | Legacy MPS protobuf v29.3; rollback |
+| `20240116.0` | `20240116.0` | protobuf v29.3 companion; rollback |
 | `20260107.1` | `20260107.1` | Align with pdfium_all / MPS v35.1 |
 
 ## Unification rules

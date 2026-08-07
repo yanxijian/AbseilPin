@@ -8,13 +8,13 @@
 | pdfium_all | `deps.lock.md` → `thirdparty/abseil-cpp` / vcpkg `abseil` | **`20260107.1`** |
 | AbseilPin | `pins/20260107.1` | **`20260107.1`**（统一目标 / 默认 sibling 自动探测） |
 
-历史对照：`protobuf` **v29.3** 自带 **`20240116.0`**（仍保留 pin，仅作回退）。
+另保留 pin：`protobuf` v29.3 自带的 **`20240116.0`**（回退用）。
 
 ## 本仓 pins
 
 | ID | Upstream tag | 用途 |
 |----|--------------|------|
-| `20240116.0` | `20240116.0` | 旧 MPS protobuf v29.3；回退 |
+| `20240116.0` | `20240116.0` | protobuf v29.3 配套；回退 |
 | `20260107.1` | `20260107.1` | 与 pdfium_all / MPS v35.1 对齐 |
 
 ## 统一原则

@@ -18,7 +18,7 @@ MPS and pdfium historically pinned different LTS tags; this repo owns the chosen
 | Pin ID | Abseil LTS | Matches | Status |
 |--------|------------|---------|--------|
 | **`20260107.1`** (default) | [20260107.1](https://github.com/abseil/abseil-cpp/releases/tag/20260107.1) | pdfium_all `deps.lock`; MPS `protobuf` **v35.1** via pin | **Buildable; MPS can consume via package** |
-| **`20240116.0`** | [20240116.0](https://github.com/abseil/abseil-cpp/releases/tag/20240116.0) | Legacy MPS `protobuf` v29.3 | Rollback only |
+| **`20240116.0`** | [20240116.0](https://github.com/abseil/abseil-cpp/releases/tag/20240116.0) | protobuf v29.3 companion | Rollback only |
 
 Details: [PIN_MATRIX.md](PIN_MATRIX.md) · Roadmap: [ROADMAP.md](ROADMAP.md)
 
