@@ -11,18 +11,18 @@
 
 验收：Demo/Volition Host 旁只有 **一份** 来自 pin 的 `abseil_dll.dll`。
 
-## 阶段 1b — ABI / 工具链（当前缺口）
+## 阶段 1b — VolitionToolchain（进行中）
 
-版本号已可贴 **20260107.1**，但：
+全栈契约见 Volition `docs/zh/toolchain.md`：
 
-| 项 | MPS / AbseilPin | pdfium_all（典型） |
-|----|-----------------|-------------------|
-| 编译器 | MSVC `cl` | 推荐 **clang-cl** |
-| C++ | **17** | **20**（`cxx_std_20`） |
-| STL | MSVC STL | 开 V8 时为 Chromium **libc++** |
-| Abseil 来源 | AbseilPin `/MD` DLL | vcpkg 或 FetchContent（CMake 内仍见 `20250127.0` 回退 tag） |
+| 项 | 值 |
+|----|-----|
+| C++ | **20**（壳与 pdfium 一致；不再把 pdfium 降到 17） |
+| Windows 编译器 | **MSVC `cl`** + `/MD` |
+| Abseil | AbseilPin **`20260107.1`** |
+| pdfium 同进程 | **`PDFIUM_ENABLE_V8=OFF`**（开 V8 仍为 libc++，与壳冲突） |
 
-同进程合并前建议：pdfium **关 V8** + 显式链 AbseilPin / 同 pin 的 MSVC abseil，或接受继续 OOP render。
+缺口：pdfium fork（`volition-toolchain`）用 `cl` 编通产品路径，并默认接本仓 pin。
 
 ## 阶段 2 — Volition 同进程 PDF
 

@@ -11,18 +11,18 @@ Stages aligned with the Volition discussion.
 
 Acceptance: Demo / Volition Host directories contain **one** pin-built `abseil_dll.dll`.
 
-## Stage 1b — ABI / toolchain (current gap)
+## Stage 1b — VolitionToolchain (in progress)
 
-Version tags can match **20260107.1**, but:
+Contract: Volition `docs/en/toolchain.md`.
 
-| Item | MPS / AbseilPin | pdfium_all (typical) |
-|------|-----------------|----------------------|
-| Compiler | MSVC `cl` | Prefer **clang-cl** |
-| C++ | **17** | **20** (`cxx_std_20`) |
-| STL | MSVC STL | Chromium **libc++** when V8 is on |
-| Abseil source | AbseilPin `/MD` DLL | vcpkg or FetchContent (CMake still has a `20250127.0` fallback tag) |
+| Item | Value |
+|------|--------|
+| C++ | **20** (shell and pdfium; do not down-level pdfium to 17) |
+| Windows compiler | **MSVC `cl`** + `/MD` |
+| Abseil | AbseilPin **`20260107.1`** |
+| pdfium in-process | **`PDFIUM_ENABLE_V8=OFF`** (V8 ON still uses libc++ and conflicts) |
 
-Before in-process merge: rebuild pdfium **without V8** against AbseilPin / the same MSVC pin, or keep OOP render.
+Gap: pdfium fork (`volition-toolchain`) builds with `cl` on the product path and defaults to this pin.
 
 ## Stage 2 — Volition in-process PDF
 
