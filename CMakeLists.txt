@@ -12,6 +12,10 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
+if(MSVC)
+  add_compile_options(/MP)
+endif()
+
 set(ABSL_PIN_ID "20260107.1" CACHE STRING "Pin id under pins/ (abseil-cpp git tag)")
 set_property(CACHE ABSL_PIN_ID PROPERTY STRINGS "20260107.1" "20240116.0")
 
