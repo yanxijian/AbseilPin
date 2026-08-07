@@ -29,8 +29,10 @@ Gap: pdfium fork (`volition-toolchain`) builds with `cl` on the product path and
 Prerequisite: pdfium and `mps_*` share **the same pin and the same STL ABI** for `abseil_dll.dll`.
 
 1. Link pdfium directly from `volition_pdf.dll` (delay-load OK).  
-2. Retire day-to-day `volition_pdf_render.exe` (optional debug switch OK).  
-3. Keep a single abseil under `bin/pdf/`.
+2. Retire day-to-day `volition_pdf_render.exe` (optional debug switch `VOLITION_PDF_OOP_RENDER` + `VOLITION_PDF_OOP=1`).  
+3. Keep a single abseil under `bin/`.
+
+Landing notes: pdfium and MPS both **FORCE `absl_DIR` to this pin** (so a cached vcpkg absl cannot win); restage `pdfium_all/output` from the **V8=OFF** `cmake-msvc` tree.
 
 ## Stage 3 (optional)
 

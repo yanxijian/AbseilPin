@@ -29,8 +29,10 @@
 前提：pdfium 与 `mps_*` 依赖 **同一 pin 且同一 STL ABI** 的 `abseil_dll.dll`。
 
 1. `volition_pdf.dll` 直接链接 pdfium（可 delay-load）。  
-2. 退役日常路径上的 `volition_pdf_render.exe`（可留 debug 开关）。  
-3. `bin/pdf/` 只保留一份 abseil。
+2. 退役日常路径上的 `volition_pdf_render.exe`（可留 debug 开关 `VOLITION_PDF_OOP_RENDER` + `VOLITION_PDF_OOP=1`）。  
+3. `bin/` 只保留一份 abseil。
+
+落地要点：pdfium / MPS 均 **FORCE `absl_DIR` 到本仓 pin**（避免 vcpkg 缓存抢走）；`pdfium_all/output` 必须用 **V8=OFF** 的 `cmake-msvc` 重新 stage。
 
 ## 阶段 3（可选）
 
