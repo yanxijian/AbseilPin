@@ -1,5 +1,28 @@
-build/
-prefix/
+# Build / install trees
+/build/
+/build-*/
+/prefix/
+/out/
+/cmake-build-*/
 .cache/
-*.user
 .vs/
+/.idea/
+CMakeUserPresets.json
+*.user
+*.user.*
+
+# Compilers / packages
+compile_commands.json
+CMakeCache.txt
+CMakeFiles/
+_deps/
+*.pdb
+*.ilk
+*.obj
+
+# OS / temp
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
