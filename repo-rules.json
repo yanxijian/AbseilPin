@@ -1,0 +1,130 @@
+{
+  "version": 1,
+  "skip_dirs": [
+    ".git",
+    "build",
+    "_deps",
+    "out"
+  ],
+  "skip_prefixes": [
+    "build-",
+    "cmake-build"
+  ],
+  "encoding": [
+    {
+      "glob": "*.md",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.ps1",
+      "bom": true,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.py",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.sh",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.yml",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.json",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "*.cmake",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "CMakeLists.txt",
+      "bom": false,
+      "eol": "lf"
+    },
+    {
+      "glob": "LICENSE",
+      "bom": false,
+      "eol": "lf"
+    }
+  ],
+  "width": {
+    "globs": [],
+    "limit": 140,
+    "tab_width": 4
+  },
+  "forbidden": [],
+  "headers": {
+    "globs": [],
+    "first_line": "#pragma once",
+    "forbid_namespace_using": false
+  },
+  "versions": [],
+  "changelog": null,
+  "required_files": [
+    "LICENSE",
+    "README.md",
+    "repo-rules.json",
+    "scripts/repo_rules.py",
+    ".githooks/pre-commit",
+    ".github/workflows/hygiene.yml"
+  ],
+  "markdown": {
+    "globs": [
+      "*.md"
+    ],
+    "check_links": true,
+    "translations": {
+      "pairs": [
+        [
+          "README.md",
+          "docs/en/README.md"
+        ],
+        [
+          "docs/zh/PIN_MATRIX.md",
+          "docs/en/PIN_MATRIX.md"
+        ],
+        [
+          "docs/zh/ROADMAP.md",
+          "docs/en/ROADMAP.md"
+        ]
+      ],
+      "marker": "translated-from:",
+      "stale": "warning"
+    }
+  },
+  "gitattributes": {
+    "path": ".gitattributes",
+    "required_patterns": []
+  },
+  "skip_globs": [],
+  "comments": {
+    "english": true
+  },
+  "commit_message": {
+    "english": true
+  },
+  "readme_badges": {
+    "files": [
+      "README.md",
+      "docs/en/README.md"
+    ],
+    "min": 1,
+    "require": [
+      "img.shields.io/badge/License"
+    ]
+  },
+  "about": {
+    "description": "为 MPS protobuf 与 pdfium_all 钉住同一份共享 abseil_dll | Pinned shared abseil_dll for MPS protobuf and pdfium_all",
+    "order": "zh-en"
+  }
+}

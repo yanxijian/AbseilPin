@@ -1,4 +1,4 @@
-# Build one Abseil pin into a local prefix (Windows MSVC x64 + Ninja).
+﻿# Build one Abseil pin into a local prefix (Windows MSVC x64 + Ninja).
 param(
   [string]$Pin = "20260107.1",
   [string]$Prefix = "",

@@ -1,5 +1,8 @@
 # Pin matrix
 
+
+<!-- translated-from: docs/zh/PIN_MATRIX.md sha256:07a738e7a8ef -->
+
 ## Field check (2026-08-08)
 
 | Consumer | Dependency | Abseil |

@@ -1,5 +1,8 @@
 # Unification roadmap (AbseilPin → in-process PDF)
 
+
+<!-- translated-from: docs/zh/ROADMAP.md sha256:612a195c40e9 -->
+
 Milestones aligned with the Volition toolchain.
 
 ## Stage 1 (this repo + MPS) — done

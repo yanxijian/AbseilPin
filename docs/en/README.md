@@ -1,5 +1,8 @@
 # AbseilPin
 
+
+<!-- translated-from: README.md sha256:6da7bf225561 -->
+
 **English** · [简体中文](../../README.md)
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../LICENSE)
