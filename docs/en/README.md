@@ -1,16 +1,16 @@
 # AbseilPin
 
+**English** · [简体中文](../../README.md)
+
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](../../LICENSE)
 
 Pin repo that builds **one** shared Windows `abseil_dll.dll` so [MultiProcessShell](https://github.com/yanxijian/MultiProcessShell) (protobuf) and [pdfium_all](https://github.com/yanxijian/pdfium_all) / [Volition](https://github.com/yanxijian/Volition) can align ABI.
 
 > Not a product library. The only `interface` is: **fixed LTS tag → install prefix usable with `find_package(absl)`**.
 
-Canonical Chinese docs live at the [root README](../../README.md) and under [../zh/](../zh/).
-
 ## Why
 
-A process must not load two different `abseil_dll.dll` builds (same basename loads once; mismatched symbols → error 127).  
+A process must not load two different `abseil_dll.dll` builds (same basename loads once; mismatched symbols → error 127).
 MPS and pdfium historically pinned different LTS tags; this repo owns the chosen pin and the unification path.
 
 ## Pin matrix (summary)

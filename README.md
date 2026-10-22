@@ -1,16 +1,16 @@
 # AbseilPin
 
+**简体中文** · [English](docs/en/README.md)
+
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
 共享 **一份** Windows `abseil_dll.dll` 的 pin 仓：给 [MultiProcessShell](https://github.com/yanxijian/MultiProcessShell)（protobuf）与 [pdfium_all](https://github.com/yanxijian/pdfium_all) / [Volition](https://github.com/yanxijian/Volition) 对齐 ABI。
 
 > 不是业务库。`interface` 只有：**固定 LTS tag → 编出可 `find_package(absl)` 的 prefix**。
 
-English overview: [docs/en/README.md](docs/en/README.md).
-
 ## 为何需要
 
-同进程不能加载两套不同的 `abseil_dll.dll`（同名只装一次，符号对不上就 127）。  
+同进程不能加载两套不同的 `abseil_dll.dll`（同名只装一次，符号对不上就 127）。
 MPS 与 pdfium 曾钉不同 LTS，本仓负责钉住「要用的那一份」并给出统一路线。
 
 ## 当前 pin 矩阵
@@ -20,7 +20,7 @@ MPS 与 pdfium 曾钉不同 LTS，本仓负责钉住「要用的那一份」并�
 | **`20260107.1`**（默认） | [20260107.1](https://github.com/abseil/abseil-cpp/releases/tag/20260107.1) | [pdfium_all](https://github.com/yanxijian/pdfium_all) `deps.lock`；MPS `protobuf` **v35.1**（经 pin） | **可编、可给 MPS `package` 消费** |
 | **`20240116.0`** | [20240116.0](https://github.com/abseil/abseil-cpp/releases/tag/20240116.0) | 旧 MPS `protobuf` v29.3 | 仅回退 |
 
-详情：[docs/zh/PIN_MATRIX.md](docs/zh/PIN_MATRIX.md) · 路线：[docs/zh/ROADMAP.md](docs/zh/ROADMAP.md)  
+详情：[docs/zh/PIN_MATRIX.md](docs/zh/PIN_MATRIX.md) · 路线：[docs/zh/ROADMAP.md](docs/zh/ROADMAP.md)
 English: [docs/en/PIN_MATRIX.md](docs/en/PIN_MATRIX.md) · [docs/en/ROADMAP.md](docs/en/ROADMAP.md)
 
 ## 快速开始（Windows MSVC x64）
