@@ -126,5 +126,16 @@
   "about": {
     "description": "为 MPS protobuf 与 pdfium_all 钉住同一份共享 abseil_dll | Pinned shared abseil_dll for MPS protobuf and pdfium_all",
     "order": "zh-en"
+  },
+  "actions": {
+    "require": {
+      "actions/checkout": "v7",
+      "actions/setup-python": "v7",
+      "actions/setup-node": "v7",
+      "actions/upload-artifact": "v7",
+      "actions/download-artifact": "v8",
+      "actions/cache": "v6"
+    },
+    "allow_sha": true
   }
 }
